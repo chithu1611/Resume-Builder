@@ -1,0 +1,93 @@
+{% extends 'Resumeapp/layouts/main.html' %}
+{% block content %}
+
+<h1 class="py-5 d-flex justify-content-center">Education Details</h1>
+<div class="d-flex justify-content-start p-5">
+    <a href="{% url 'home'%}"><button class="btn btn-outline-primary ">Home</button></a>
+</div>
+<form id="form">
+<div class="container" style="margin-top:50px;" >
+    <div class="row ">
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input  id="Edu_college1"  required type="text"  ><label alt='College/School' placeholder='College/School'></label></div>
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input  id="Edu_year1"  required type="text"  ><label alt='Year' placeholder='Year'></label></div>
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input  id="Edu_percentage1"  required type="text" ><label alt='Percentage' placeholder='Percentage'></label></div>
+    </div>
+    <div class="row ">
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input  id="Edu_college2" required  type="text" ><label alt='College/School' placeholder='College/School'></label></div>
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input  id="Edu_year2" required  type="text"  ><label alt='Year' placeholder='Year'></label></div>
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input  id="Edu_percentage2" required  type="text"><label alt='Percentage' placeholder='Percentage'></label></div>
+    </div>
+    <div class="row ">
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input  id="Edu_college3"  required  type="text"  ><label alt='College/School' placeholder='College/School'></label></div>
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input  id="Edu_year3" required  type="text"  ><label alt='Year' placeholder='Year'></label></div>
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input  id="Edu_percentage3"  required type="text"><label alt='Percentage' placeholder='Percentage'></label></div>
+    </div>
+</div>
+
+<button type="submit" value="submit" class="btn btn-outline-primary mx-5" onclick="submitForm()"> Submit</button>
+</form>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+     function submitForm(event) {
+            swal({
+                title: "WELL DONE🙌!!",
+                text: "Your Response Is Taken👍",
+                buttons: ["Cancel", "Ok"],
+                }).then(function(result) {
+                    if (result) {
+                    window.location.href = "{% url 'home'%}";
+                    }
+                });
+            }
+ </script>
+<script>
+    var form=document.getElementById("form");
+
+form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    var heading=document.getElementById("Edu_college1");
+    var headingValue=heading.value;
+    localStorage.setItem('Edu_college1',headingValue);
+    
+    var heading=document.getElementById("Edu_year1");
+    var headingValue=heading.value;
+    localStorage.setItem('Edu_year1',headingValue);
+
+    
+    var heading=document.getElementById("Edu_percentage1");
+    var headingValue=heading.value;
+    localStorage.setItem('Edu_percentage1',headingValue);
+    
+    var heading=document.getElementById("Edu_college2");
+    var headingValue=heading.value;
+    localStorage.setItem('Edu_college2',headingValue);
+
+    
+    var heading=document.getElementById("Edu_year2");
+    var headingValue=heading.value;
+    localStorage.setItem('Edu_year2',headingValue);
+    
+    var heading=document.getElementById("Edu_percentage2");
+    var headingValue=heading.value;
+    localStorage.setItem('Edu_percentage2',headingValue);
+
+    
+    var heading=document.getElementById("Edu_college3");
+    var headingValue=heading.value;
+    localStorage.setItem('Edu_college3',headingValue);
+
+    
+    var heading=document.getElementById("Edu_year3");
+    var headingValue=heading.value;
+    localStorage.setItem('Edu_year3',headingValue);
+    
+    var heading=document.getElementById("Edu_percentage3");
+    var headingValue=heading.value;
+    localStorage.setItem('Edu_percentage3',headingValue);
+
+})
+</script>
+
+
+
+{% endblock content %}

@@ -1,0 +1,198 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume 4</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <style>
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+         }
+
+        .profile-pic img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #fd4f57;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s;
+            justify-content: center;
+            }
+
+            .btn:hover {
+                    box-shadow:1px 1px 9px 6px rgba(15, 15, 15, 0.945);
+                    border-color: #00bafa;
+                    border:2.5px solid #00bafa
+            }
+
+            .container{
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                height: 100%;
+            }
+    </style>
+</head>
+<body>
+    <h1 id="name">DIVYAANANTH K V</h1>
+    <div class="info-1">
+        <pre><b width="20px" hight="20px">&#64;</b> <span id="mailid">kvdivya@gmail.com</span></pre>
+        <pre><img src="{% static 'images/phone.png' %}" width="20px" height="20px" alt="mobile"> <span id="mobile">6374416674</span></pre>
+        <p class="para-1"><img src="{% static 'images/location.png' %}" width="20px" height="20px" alt=""><span id="address"> 11, saliar middle school 2nd street Vellaikottai, Aruppukottai, Tamilnadu,Pin code - 626101.</span></p>
+        <div class="profile-pic">
+            <img id="profileImage" alt="Profile Picture">
+        </div>
+    </div>
+     
+    <h4>Objective</h4>
+    <p id="objective">Self-motivated and hardworking fresher seeking for an opportunity to work in a challenging environment to prove
+        my skills and utilize my knowledge & intelligence in the growth of the organization.</p>
+    <h4>Education</h4>
+    <table cell-spacing="30px" colspan="2">
+        <tr>
+            <td id="year1">2023</td>
+            <td id="college">B.E / Computer science and engineering
+                Government College of Engineering, Erode. 
+                CGPA 8.12
+            </td>
+        </tr>
+        <tr>
+            <td id="year2">2019</td>
+            <td id="school">HSC
+                Noble matric hr sec school, Virudhunagar <br>
+                89.3%
+            </td>
+        </tr>
+        <tr>
+            <td id="year3">2017</td>
+            <td id="school1">SSLC
+                Noble matric hr sec school, Virudhunagar <br>
+                98.4%
+            </td>
+        </tr>
+    </table>
+    <h4>Technical Skils</h4>
+    <div id="skills">
+        Languages - python, Basics of C and java <br>
+        Database - MySQL <br>
+        Web development - HTML, CSS <br>
+        Tools - Android studio
+    </div>
+    <h4>Strength</h4>
+    <div id="interests">
+        Problem solving <br>
+        Teamwork <br>
+        Decision making
+    </div>
+    <h4>Personal Infromation</h4>
+    <div>
+       <pre>Date of birth : <span id="dob"> 06-12-2001</span></pre>
+        <pre>Nationality : India</pre>
+        <pre>Languages known : <span id="lang">English, Tamil</span></pre>
+    </div>
+    <h4>Declaration</h4>
+    <p>I hereby declare that all the details mentioned above are true to the best of my knowledge</p>
+
+    <!-- <button id="btn" style="display:block;" onclick="print()">PRINT</button> -->
+    <div class="container">
+        <input type="button" class="btn" id="willHide" value="Download" />
+    </div>
+    <script>
+        const profilePic = document.getElementById('profileImage');
+      
+        const db = window.indexedDB.open('ProfilePictureDB', 1);
+      
+        db.onerror = function(event) {
+          console.error('Error opening database:', event.target.error);
+        };
+      
+        db.onsuccess = function(event) {
+          const database = event.target.result;
+          const transaction = database.transaction('ProfilePictureStore', 'readonly');
+          const store = transaction.objectStore('ProfilePictureStore');
+      
+          const request = store.get('profilePicture');
+      
+          request.onerror = function(event) {
+            console.error('Error retrieving image file:', event.target.error);
+          };
+      
+          request.onsuccess = function(event) {
+            const file = request.result;
+            if (file) {
+              const fileURL = URL.createObjectURL(file);
+              profilePic.src = fileURL;
+            }
+          };
+      
+          transaction.oncomplete = function() {
+            database.close();
+          };
+        };
+      
+        db.onupgradeneeded = function(event) {
+          const database = event.target.result;
+          database.createObjectStore('ProfilePictureStore');
+        };
+      </script>
+    <script>
+
+            document.getElementById("name").innerHTML=localStorage.getItem("name");
+            var email=document.getElementById("mailid");
+            var mobile=document.getElementById("mobile");
+            var address=document.getElementById("address");
+            var objective=document.getElementById("objective");
+            var year1=document.getElementById("year1");
+            var year2=document.getElementById("year2");
+            var year3=document.getElementById("year3");
+            var college=document.getElementById("college");
+            var school=document.getElementById("school");
+            var school1=document.getElementById("school1");
+            var skills=document.getElementById("skills");
+            var interests=document.getElementById("interests");
+            var dob=document.getElementById("dob");
+            var lang=document.getElementById("lang");
+
+            
+            email.innerHTML=localStorage.getItem("email");
+            mobile.innerHTML=localStorage.getItem("phone");
+            address.innerHTML=localStorage.getItem("address");
+            objective.innerHTML=localStorage.getItem("objective");
+            year1.innerHTML=localStorage.getItem("Edu_year3");
+            year2.innerHTML=localStorage.getItem("Edu_year2");
+            year3.innerHTML=localStorage.getItem("Edu_year1");
+            college.innerHTML=localStorage.getItem("Edu_college3")+"<br>"+localStorage.getItem("Edu_percentage3");
+            school.innerHTML=localStorage.getItem("Edu_college2")+"<br>"+localStorage.getItem("Edu_percentage2");
+            school1.innerHTML=localStorage.getItem("Edu_college1")+"<br>"+localStorage.getItem("Edu_percentage1");
+            skills.innerHTML=localStorage.getItem("skill_heading1");
+            interests.innerHTML=localStorage.getItem("Interests1");
+            dob.innerHTML=localStorage.getItem("dob");
+            lang.innerHTML=localStorage.getItem("lang1");
+
+            document.getElementById("willHide").addEventListener("click", function(event){
+               event.target.style.display = "none";
+               window.print();
+            });
+
+        
+    </script>
+</body>
+</html>

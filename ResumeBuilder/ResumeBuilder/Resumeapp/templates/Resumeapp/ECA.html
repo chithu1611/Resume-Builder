@@ -1,0 +1,85 @@
+{% extends 'Resumeapp/layouts/main.html' %}
+{% block content%}
+<h1 class="py-5 d-flex justify-content-center">Extra Curricular Activity</h1>
+<div class="d-flex justify-content-between p-5">
+    <a href="{% url 'home'%}"><button class="btn btn-outline-primary ">Home</button></a>
+    <button type="button"class="btn btn-outline-primary " id="addbtn">Add</button>
+    <button type="button"class="btn btn-outline-primary " id="delbtn">Delete</button>
+</div>
+<form id="form">
+<div class="container" id="container" style="margin-top:10px">
+    <div class="col" id="divEl">
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input id="Activities1" required type="text"><label alt='Activities' placeholder='Activities'></div>
+    </div>
+</div>
+<button type="submit" value="submit" class="btn btn-outline-primary mx-5" onclick="submitForm()"> Submit</button>
+</form>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+     function submitForm(event) {
+            swal({
+                title: "WELL DONE🙌!!",
+                text: "Your Response Is Taken👍",
+                buttons: ["Cancel", "Ok"],
+                }).then(function(result) {
+                    if (result) {
+                    window.location.href = "{% url 'home'%}";
+                    }
+                });
+            }
+ </script>
+<script>
+    var addBtn=document.getElementById("addbtn");
+    var delBtn=document.getElementById("delbtn");
+    var divEl=document.getElementById("divEl");
+    var containerId=document.getElementById("container");
+
+    var form=document.getElementById("form");
+
+    var i=1; 
+
+    addBtn.addEventListener("click",()=>{
+        console.log("hi");
+        var div=document.createElement("div");
+        div.className="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"
+
+        var input=document.createElement("input");
+        input.type = "text";
+        input.setAttribute("required",""); 
+        
+        var label=document.createElement("label");
+        label.setAttribute("alt","Activities");
+        label.setAttribute("placeholder","Activities");
+
+       var value="Activities"+(i+1);
+       input.setAttribute("id",value) 
+
+       div.appendChild(input);
+       div.appendChild(label);
+       divEl.appendChild(div);
+
+        i=i+1;
+    })
+
+
+    delBtn.addEventListener("click",()=>{
+        console.log("bye");
+        i=i-1;
+        divEl.removeChild(divEl.lastElementChild);
+    })
+
+
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        for (j=1;j<=i;j++){
+        var heading=document.getElementById("Activities"+j);
+        console.log(i)
+        var headingValue=heading.value;
+        localStorage.setItem('Activities'+j,headingValue);
+        }
+        
+       localStorage.setItem('Activities_len',i);
+       console.log("main",i); 
+    })
+</script>
+{% endblock content%}

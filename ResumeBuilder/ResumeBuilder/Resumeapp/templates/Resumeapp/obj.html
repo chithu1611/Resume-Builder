@@ -1,0 +1,40 @@
+{% extends 'Resumeapp/layouts/main.html' %}
+{% block content%}
+<h1 class="py-5 d-flex justify-content-center">Objective</h1>
+<div class="d-flex justify-content-between p-5">
+    <a href="{% url 'home'%}"><button class="btn btn-outline-primary ">Home</button></a>
+</div>
+<form id="form"> 
+<div class="container" id="container" style="margin-top:10px">
+    <div class="col">
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"><textarea id="Objective" required ></textarea><label alt='Objective' placeholder='Objective'></label></div>
+    </div>
+</div>
+<button type="submit" value="submit" onclick="submitForm()" class="btn btn-outline-primary mx-5"> Submit</button>
+</form>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+     function submitForm(event) {
+            swal({
+                title: "WELL DONE🙌!!",
+                text: "Your Response Is Taken👍",
+                buttons: ["Cancel", "Ok"],
+                }).then(function(result) {
+                    if (result) {
+                    window.location.href = "{% url 'home'%}";
+                    }
+                });
+            }
+ </script>
+<script>  
+    var form=document.getElementById("form");
+
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        var heading=document.getElementById("Objective");
+        console.log("s")
+        var headingValue=heading.value;
+        localStorage.setItem('Objective',headingValue);
+    })
+</script>
+{% endblock content%}

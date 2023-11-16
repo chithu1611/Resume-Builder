@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #585c68;
+  font-size: 14px;
+  line-height: 22px;
+  color: #555555;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.semi-bold {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.resume {
+  width: 800px;
+  height: auto;
+  display: flex;
+  margin: 50px auto;
+}
+
+.resume .resume_left {
+  width: 280px;
+  background: #0bb5f4;
+}
+
+.resume .resume_left .resume_profile {
+  width: 100%;
+  height: 280px;
+}
+
+.resume .resume_left .resume_profile img {
+  width: 100%;
+  height: 90%;
+}
+
+.resume .resume_left .resume_content {
+  padding: 0 25px;
+}
+
+.resume .title {
+  margin-bottom: 20px;
+}
+
+.resume .resume_left .bold {
+  color: #fff;
+}
+
+.resume .resume_left .regular {
+  color: #b1eaff;
+}
+
+.resume .resume_item {
+  padding: 25px 0;
+  border-bottom: 2px solid #b1eaff;
+}
+
+.resume .resume_left .resume_item:last-child,
+.resume .resume_right .resume_item:last-child {
+  border-bottom: 0px;
+}
+
+.resume .resume_left ul li {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.resume .resume_left ul li:last-child {
+  margin-bottom: 0;
+}
+
+.resume .resume_left ul li .icon {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  color: #0bb5f4;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 16px;
+  position: relative;
+}
+
+.resume .icon i,
+.resume .resume_right .resume_hobby ul li i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.resume .resume_left ul li .data {
+  color: #b1eaff;
+}
+
+.resume .resume_left .resume_skills ul li {
+  display: flex;
+  margin-bottom: 10px;
+  color: #b1eaff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume .resume_left .resume_skills ul li .skill_name {
+  width: 25%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress {
+  width: 60%;
+  margin: 0 5px;
+  height: 5px;
+  background: #009fd9;
+  position: relative;
+}
+
+.resume .resume_left .resume_skills ul li .skill_per {
+  width: 15%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+}
+
+.resume .resume_left .resume_social .semi-bold {
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.resume .resume_right {
+  width: 520px;
+  background: #fff;
+  padding: 25px;
+}
+
+.resume .resume_right .bold {
+  color: #0bb5f4;
+}
+
+.resume .resume_right .resume_work ul,
+.resume .resume_right .resume_education ul {
+  padding-left: 40px;
+  overflow: hidden;
+}
+
+.resume .resume_right ul li {
+  position: relative;
+}
+
+.resume .resume_right ul li .date {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.resume .resume_right ul li .info {
+  margin-bottom: 20px;
+}
+
+.resume .resume_right ul li:last-child .info {
+  margin-bottom: 0;
+}
+
+.resume .resume_right .resume_work ul li:before,
+.resume .resume_right .resume_education ul li:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid #0bb5f4;
+}
+
+.resume .resume_right .resume_work ul li:after,
+.resume .resume_right .resume_education ul li:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -21px;
+  width: 2px;
+  height: 115px;
+  background: #0bb5f4;
+}
+
+#Hobbies{
+    font-size:15px;
+}
+
+
+
+#gender{
+font-size:2px;
+margin-top:50px;
+}
+
+</style>
+
+<style>
+    .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-right:100px;
+
+  }
+  .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #fd4f57;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s;
+      justify-content: center;
+    }
+
+    .btn:hover {
+            box-shadow:1px 1px 9px 6px rgba(15, 15, 15, 0.945);
+            border-color: #00bafa;
+            border:2.5px solid #00bafa
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100%;
+    }
+  
+  </style>
+
+</head>
+<body>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+<div class="resume">
+   <div class="resume_left">
+    <div class="resume_profile">
+       <img id="profileImage" alt="Profile Picture">
+      </div>
+     <div class="resume_content">
+       <div class="resume_item resume_info">
+         <div class="title">
+           <p class="bold" id="name">stephen colbert</p>
+           <p class="regular" id="role">Designer</p>
+           <p id="gender" style="color:white; margin-top:10px ;font-size:20px">stephen colbert</p>
+         </div>
+         <ul>
+           <li>
+             <div class="icon">
+               <i class="fas fa-map-signs"></i>
+             </div>
+             <div class="data" id="Address">
+               21 Street, Texas <br /> USA
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fas fa-envelope"></i>
+             </div>
+             <div class="data" id="email">
+               stephen@gmail.com
+             </div>
+           </li>
+           <li>
+             <div class="icon">
+               <i class="fab fa-twitter"></i>
+             </div>
+             <div class="data" id="twitter">
+               www.stephen.com
+             </div>
+           </li>
+           <li>
+            <div class="icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="data" id="github">
+              www.stephen.com
+            </div>
+          </li>
+          <li>
+            <div class="icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="data" id="linkedin">
+              www.stephen.com
+            </div>
+          </li>
+          <p >Dob:<span id="dob"></span></p>
+         </ul>
+       </div>
+       <div class="resume_item resume_skills">
+         <div class="title">
+           <p class="bold">skill's</p>
+         </div>
+         <ul id="ul">
+         </ul>
+       </div>
+       <div class="resume_item resume_social">
+         <div class="title">
+           <p class="bold">Achievements</p>
+         </div>
+         <ul id="ul7">
+        </ul>
+       </div>
+       <div class="resume_item resume_social">
+        <div class="title">
+          <p class="bold">Activities</p>
+        </div>
+        <ul id="ul8">
+       </ul>
+      </div>
+      <div class="resume_item resume_social">
+      <div class="title">
+        <p class="bold">Hobby</p>
+      </div>
+    <ul id="ul3">
+   </ul>
+</div>
+     </div>
+  </div>
+  <div class="resume_right">
+    <div class="resume_item resume_about">
+        <div class="title">
+           <p class="bold">About us</p>
+         </div>
+        <p id="Objective">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis illo fugit officiis distinctio culpa officia totam atque exercitationem inventore repudiandae?</p>
+    </div>
+    <div class="resume_item resume_work" id="work">
+        <div class="title">
+           <p class="bold" >Work Experience</p>
+         </div>
+        <ul id="ul1">
+            
+        </ul>
+    </div>
+    <div class="resume_item resume_education" id="edu">
+      <div class="title">
+           <p class="bold">Education</p>
+         </div>
+      <ul id="ul2">
+            
+        </ul>
+    </div>
+    <div class="resume_item resume_education" id="project">
+        <div class="title">
+             <p class="bold">Project</p>
+           </div>
+        <ul id="ul4">
+              
+          </ul>
+      </div>
+    <div class="resume_item resume_hobby" id="Hobbies">
+      <div class="title">
+        <p class="bold">Language</p>
+      </div>
+    <ul id="ul5">
+   </ul>
+   <div class="title">
+    <p class="bold">Interests</p>
+  </div>
+<ul id="ul6">
+</ul>
+    </div>
+  </div>
+  
+</div>
+    <div class="container">
+      <input type="button" class="btn" id="willHide" value="Download" />
+    </div>
+</div>
+
+<script>
+   document.getElementById("willHide").addEventListener("click", function(event){
+               event.target.style.display = "none";
+               window.print();
+            });
+</script>
+<script>
+    const profilePic = document.getElementById('profileImage');
+  
+    const db = window.indexedDB.open('ProfilePictureDB', 1);
+  
+    db.onerror = function(event) {
+      console.error('Error opening database:', event.target.error);
+    };
+  
+    db.onsuccess = function(event) {
+      const database = event.target.result;
+      const transaction = database.transaction('ProfilePictureStore', 'readonly');
+      const store = transaction.objectStore('ProfilePictureStore');
+  
+      const request = store.get('profilePicture');
+  
+      request.onerror = function(event) {
+        console.error('Error retrieving image file:', event.target.error);
+      };
+  
+      request.onsuccess = function(event) {
+        const file = request.result;
+        if (file) {
+          const fileURL = URL.createObjectURL(file);
+          profilePic.src = fileURL;
+        }
+      };
+  
+      transaction.oncomplete = function() {
+        database.close();
+      };
+    };
+  
+    db.onupgradeneeded = function(event) {
+      const database = event.target.result;
+      database.createObjectStore('ProfilePictureStore');
+    };
+  </script>
+<script>
+    document.getElementById("name").innerHTML=localStorage.getItem("name");
+    document.getElementById("role").innerHTML=localStorage.getItem("role");
+    document.getElementById("gender").innerHTML=localStorage.getItem("gender");
+    document.getElementById("dob").innerHTML=localStorage.getItem("dob");
+    document.getElementById("Address").innerHTML=localStorage.getItem("address");
+    document.getElementById("linkedin").innerHTML=localStorage.getItem("linkedin");
+    document.getElementById("github").innerHTML=localStorage.getItem("github");
+    document.getElementById("twitter").innerHTML=localStorage.getItem("twitter");
+    document.getElementById("email").innerHTML=localStorage.getItem("email");
+    
+    
+    var ul2=document.getElementById("ul2");
+    for (i=1;i<=3;i++){
+      var name1=localStorage.getItem('Edu_college'+i);
+      if (name1 != null){
+        var li=document.createElement("li");
+        var div2=document.createElement("div");
+        var div1=document.createElement("div");
+        var p1=document.createElement("p");
+        var p2=document.createElement("p");
+        div2.classList.add("date");
+        div2.setAttribute("id","Edu_year"+i);
+        li.appendChild(div2)
+        div1.classList.add("info");
+        p1.classList.add("semi-bold");
+        p1.setAttribute("id","Edu_college"+i)
+        div1.appendChild(p1);
+        p2.setAttribute("id","Exp_detail"+i)
+        div1.appendChild(p2);
+        li.appendChild(div1);
+        ul2.appendChild(li)
+        ul2.appendChild(document.createElement("br"))
+        document.getElementById("Edu_college"+i).innerHTML=name1;
+        var name1=localStorage.getItem('Exp_detail'+i);
+        document.getElementById("Exp_detail"+i).innerHTML=name1;
+       var name1=localStorage.getItem('Edu_year'+i);
+       document.getElementById("Edu_year"+i).innerHTML=name1;
+    }}
+
+
+    var len=localStorage.getItem('Ach_len');
+    var ul7=document.getElementById("ul7");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Ach_heading'+i);
+      var name2=localStorage.getItem('Ach_detail'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Ach_heading'+i);
+        ul7.appendChild(l1)
+        document.getElementById("Ach_heading"+i).innerHTML=name1+"-"+name2;
+    }}
+
+    var len=localStorage.getItem('Interests_len');
+    var ul6=document.getElementById("ul6");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Interests'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Interests'+i);
+        ul6.appendChild(l1)
+        document.getElementById("Interests"+i).innerHTML=name1;
+    }}
+
+    var len=localStorage.getItem('Activities_len');
+    var ul8=document.getElementById("ul8");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Interests'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Interests'+i);
+        ul8.appendChild(l1)
+        document.getElementById("Interests"+i).innerHTML=name1;
+    }}
+
+    var len=localStorage.getItem('Hobby_len');
+    var ul3=document.getElementById("ul3");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Hobbies'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Hobbies'+i);
+        ul3.appendChild(l1)
+        document.getElementById("Hobbies"+i).innerHTML=name1;
+    }}
+
+    var len=localStorage.getItem('Lang_len');
+    var ul5=document.getElementById("ul5");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Language'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Language'+i);
+        ul5.appendChild(l1)
+        document.getElementById("Language"+i).innerHTML=name1;
+    }}
+    
+    var len=localStorage.getItem('Exp_len');
+    var ul1=document.getElementById("ul1");
+    if (len==0){
+        document.getElementById("work").innerHTML=""
+    }
+    else{
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Exp_heading'+i);
+      if (name1 != null){
+        var li=document.createElement("li");
+        var div=document.createElement("div");
+        var p1=document.createElement("p");
+        var p2=document.createElement("p");
+        div.classList.add("info");
+        p1.classList.add("semi-bold");
+        p1.setAttribute("id","Exp_heading"+i)
+        div.appendChild(p1);
+        p2.setAttribute("id","Exp_detail"+i)
+        div.appendChild(p2);
+        li.appendChild(div);
+        ul1.appendChild(li);
+        ul1.appendChild(document.createElement("br"));
+        document.getElementById("Exp_heading"+i).innerHTML=name1;
+       var name1=localStorage.getItem('Exp_detail'+i);
+       document.getElementById("Exp_detail"+i).innerHTML=name1;
+    }}}
+
+    name1=localStorage.getItem('Objective');
+    if (name1 != null){
+
+    document.getElementById("Objective").innerHTML=localStorage.getItem("Objective")
+    }
+
+    var len=localStorage.getItem('Project_len');
+    var ul4=document.getElementById("ul4");
+    if (len==0){
+        document.getElementById("project").innerHTML=""
+    }
+    else{
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('project_heading'+i);
+      if (name1 != null){
+        var li=document.createElement("li");
+        var div=document.createElement("div");
+        var p1=document.createElement("p");
+        var p2=document.createElement("p");
+        div.classList.add("info");
+        p1.classList.add("semi-bold");
+        p1.setAttribute("id","project_heading"+i)
+        div.appendChild(p1);
+        p2.setAttribute("id","project_detail"+i)
+        div.appendChild(p2);
+        li.appendChild(div);
+        ul4.appendChild(li);
+        ul4.appendChild(document.createElement("br"));
+        document.getElementById("project_heading"+i).innerHTML=name1;
+       var name1=localStorage.getItem('project_detail'+i);
+       document.getElementById("project_detail"+i).innerHTML=name1;
+    }}}
+
+    var len=localStorage.getItem('skill_len');
+    var ul=document.getElementById("ul")
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('skill_heading'+i);
+      if (name1 != null){
+        var li=document.createElement("li");
+        var div1=document.createElement("div");
+        var div2=document.createElement("div");
+        var div3=document.createElement("div");
+        var span=document.createElement("span");
+        div1.classList.add("skill_name");
+        div2.classList.add("skill_progress");
+        div3.classList.add("skill_per");
+        div1.setAttribute("id","skill_heading"+i);
+        li.appendChild(div1);
+        ul.appendChild(li)
+        document.getElementById("skill_heading"+i).innerHTML=name1;
+        var name1=localStorage.getItem('skill_per'+i);
+        span.setAttribute("style","width:"+name1+"%")
+        div2.appendChild(span);
+        li.appendChild(div2);
+        ul.appendChild(li)
+        li.appendChild(div3);
+        ul.appendChild(li)
+        div3.setAttribute("id",'skill_per'+i);
+        document.getElementById("skill_per"+i).innerHTML=name1;
+    }}
+ </script>
+
+</body></html>

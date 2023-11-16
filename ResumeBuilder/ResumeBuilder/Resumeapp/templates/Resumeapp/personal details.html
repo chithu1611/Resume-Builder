@@ -1,0 +1,118 @@
+{% extends 'Resumeapp/layouts/main.html' %}
+{% block content %}
+    <h1 class="py-5 d-flex justify-content-center">PERSONAL DETAILS</h1>
+    <div class="d-flex justify-content-start p-5">
+        <a href="{% url 'home'%}"><button class="btn btn-outline-primary ">Home</button></a>
+    </div>
+    <form id="form">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4" id="A"> 
+                    <input id="name" required type='text'>
+                    <label alt='Name' placeholder='Name'></label></div>
+                <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <select class="form-select-md rounded-pill" name="gender" placeholder="Gender"id="gender" autocomplete="on">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option disabled>Other</option>
+                  </select></div>
+                <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input id="dob" name="dob" class="rounded-pill"  type="date" autocomplete="on"></div>
+            </div>
+        </div>
+<br>
+    <div class="container">
+      <div class="row ">
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <textarea id="address"  required ></textarea><label alt='Address' placeholder='Address'></label></div>
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input id="role" type="text" required><label alt='Role' placeholder='Role'></label></div> 
+        
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input id="email"  required ></input><label alt='Email' placeholder='Email'></label></div> 
+    </div>
+    <br>
+    <div class="row ">
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input id="linkedin" required  ></input><label alt='Linkedin' placeholder='Linkedin' style=></label></div>
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input id="github"  required  ></input><label alt='Github' placeholder='Github'></label></div> 
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input id="twitter"  required ></input><label alt='Twitter' placeholder='Twitter'></label></div> 
+    </div>
+    <br>
+    <div class="row">
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"> <input id="phone" type="tel" required  ><label alt='Tel' placeholder='Mobile'></label></div> 
+        <!-- <div class="upload-button">
+            <label for="profilePicture">Upload Profile Picture</label>
+            <input type="file" id="profilePicture" accept="image/*">
+          </div> -->
+    </div>
+
+     </div>
+        <button class="btn btn-outline-primary mx-5 my-5 " onclick="submitForm()"type="submit">Submit</button>
+    </form>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function submitForm(event) {
+                swal({
+                    title: "WELL DONE🙌!!",
+                    text: "Your Response Is Taken👍",
+                    buttons: ["Cancel", "Ok"],
+                    }).then(function(result) {
+                        if (result) {
+                        window.location.href = "{% url 'home'%}";
+                        }
+                    });
+                }
+    </script>
+    <script>
+        var form=document.getElementById("form");
+
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        var heading=document.getElementById("name");
+        var headingValue=heading.value;
+        localStorage.setItem('name',headingValue);
+        console.log("name")
+        
+        var heading=document.getElementById("gender");
+        var headingValue=heading.value;
+        localStorage.setItem('gender',headingValue);
+
+        // const input = document.getElementById('profilePicture');
+        // input.addEventListener('change', handleImageUpload);
+        // function handleImageUpload(event) {
+        //     const file = event.target.files[0];
+        //     if (file && file.type.startsWith('image/')) {
+        //         localStorage.setItem('profilePicture', file);
+        //     }
+        // }
+
+        var heading=document.getElementById("dob");
+        var headingValue=heading.value;
+        localStorage.setItem('dob',headingValue);
+        
+        var heading=document.getElementById("address");
+        var headingValue=heading.value;
+        localStorage.setItem('address',headingValue);
+
+        var heading=document.getElementById("role");
+        var headingValue=heading.value;
+        localStorage.setItem('role',headingValue);
+
+        var heading=document.getElementById("phone");
+        var headingValue=heading.value;
+        localStorage.setItem('phone',headingValue);
+
+        var heading=document.getElementById("twitter");
+        var headingValue=heading.value;
+        localStorage.setItem('twitter',headingValue);
+        
+        var heading=document.getElementById("linkedin");
+        var headingValue=heading.value;
+        localStorage.setItem('linkedin',headingValue);
+        
+        var heading=document.getElementById("github");
+        var headingValue=heading.value;
+        localStorage.setItem('github',headingValue);
+
+        var heading=document.getElementById("email");
+        var headingValue=heading.value;
+        localStorage.setItem('email',headingValue);
+    })
+</script>
+{% endblock content %}

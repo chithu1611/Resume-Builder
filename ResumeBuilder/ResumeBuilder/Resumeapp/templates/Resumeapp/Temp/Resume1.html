@@ -1,0 +1,443 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Resume1 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{% static 'css/Res1.css'%}">
+<style>
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #fd4f57;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+    justify-content: center;
+  }
+
+  .btn:hover {
+          box-shadow:1px 1px 9px 6px rgba(15, 15, 15, 0.945);
+          border-color: #00bafa;
+          border:2.5px solid #00bafa
+  }
+
+  .container{
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 100%;
+  }
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="resume">
+  <div class="base">
+    <div class="profile">
+      <div class="photo">
+        <!--<img src="" /> -->
+        <!-- <i class="fas fa-rocket"></i> -->
+        <div class="container">
+          <div class="profile-pic">
+            <img id="profileImage" alt="Profile Picture">
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <h1 class="name" style="text-transform: capitalize;"><b id="name"></b></h1>
+        <h3 id="gender" style="color:lightblue; text-transform: capitalize;"></h3>
+        <h2 id="role" style="color: #283593; text-transform: capitalize;"></h2>
+      </div>
+    </div>
+    <div class="about">
+      <h3>About Me</h3>
+      <p id="Objectives"></p>
+    </div>
+    <div class="contact">
+      <h3>Contact Me</h3>
+      <div class="call"><a href=""><i class="fas fa-phone"></i><span id="phone"></span></a></div>
+      <div class="email"><a href=""><i class="fas fa-envelope"></i><span id="email"></span></a></div>
+      <div class="twitter"><a href="" target="_blank"> <i class="fab fa-twitter"></i><span id="twitter"></span></a></div>
+      <div class="github"><a href="" target="_blank"> <i class="fab fa-github"></i><span id="github"></span></a></div>
+      <div class="linkedin"><a href="" target="_blank"> <i class="fab fa-linkedin"></i><span id="linkedin"></span></a></div>
+      <div class="address" style="text-align: left;"><i class="fas fa-map-marker"></i><span id="address"></span></div>
+    </div>
+    <div class="follow">
+      <h3><i class="fas fa-tasks"></i> Activities</h3>
+        <ul id="R-Activities">
+          
+        </ul>
+        <!-- <a href="https://www.facebook.com/astronaomical/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/astronaomical/" target="_blank"><i class="fab fa-instagram "></i></a>
+        <a href="https://www.pinterest.com/astronaomical/" target="_blank"><i class="fab fa-pinterest"></i></a>
+        <a href="https://www.linkedin.com/in/naomi-weatherford-758385112/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://codepen.io/astronaomical/" target="_blank"><i class="fab fa-codepen"></i></a>
+        <a href="https://www.behance.net/astronaomical" target="_blank"><i class="fab fa-behance"></i></a> -->
+    </div>
+    <div class="work">
+      <h3><i class="fa fa-language"></i> Languages</h3>
+      <ul id="R-Languages"></ul>
+    </div>
+  </div>
+  <div class="func">
+    <div class="work">
+      <h3><i class="fa fa-briefcase"></i>Experience</h3>
+      <ul id="R-Experience">
+
+        <!-- <li><span>Technical Consultant -<br>Web Design</span><small>Fiserv</small><small>Apr 2018 - Now</small></li>
+        <li><span>Web Designer</span><small>Lynden</small><small>Jan 2018 - Apr 2018</small></li>
+        <li><span>Intern - Web Design</span><small>Lynden</small><small>Aug 2017 - Dec 2017</small></li> -->
+      </ul>
+    </div>
+
+    <div class="edu">
+      <h3><i class="fa fa-graduation-cap"></i>Education</h3>
+      <ul>
+        <li><span id="Education1"></span></li>
+        <li><span id="Education2"></span></li>
+        <li><span id="Education3"></span></li>
+      </ul>
+    </div>
+
+    <div class="skills-prog">
+      <h3 style="text-transform: uppercase;"><i class="fas fa-code"></i>Programming Skills</h3>
+      <ul id="R-Skills">
+        <!-- <li data-percent="95"><span>HTML5</span>
+          <div class="skills-bar">
+            <div class="bar"></div>
+          </div>
+        </li>
+        <li data-percent="90"><span>CSS3 & SCSS</span>
+          <div class="skills-bar">
+            <div class="bar"></div>
+          </div>
+        </li>
+        <li data-percent="60"><span>JavaScript</span>
+          <div class="skills-bar">
+            <div class="bar"></div>
+          </div>
+        </li>
+        <li data-percent="50"><span>jQuery</span>
+          <div class="skills-bar">
+            <div class="bar"></div>
+          </div>
+        </li>
+        <li data-percent="40"><span>JSON</span>
+          <div class="skills-bar">
+            <div class="bar"></div>
+          </div>
+        </li>
+        <li data-percent="55"><span>PHP</span>
+          <div class="skills-bar">
+            <div class="bar"></div>
+          </div>
+        </li>
+        <li data-percent="40"><span>MySQL</span>
+          <div class="skills-bar">
+            <div class="bar"></div>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+
+    <div class="work">
+      <h3><i class="fa fa-briefcase"></i>Projects</h3>
+      <ul id="R-Projects">
+      </ul>
+    </div>
+
+    <div class="edu">
+      <h3><i class="fa fa-graduation-cap"></i>Achievements</h3>
+      <ul id="R-Achievement">
+      </ul>
+    </div>
+
+    <div class="work">
+      <h3><i class="fas fa-star"></i>Interests</h3>
+      <ul id="R-Interests">
+
+      </ul>
+    </div>
+
+    <div class="edu">
+      <h3><i class="fa fa-briefcase"></i>Hobbies</h3>
+      <ul id="R-Hobbies">
+      </ul>
+    </div>
+   
+  </div>
+
+</div>
+<div class="container">
+  <input type="button" class="btn" id="willHide" value="Download" />
+</div>
+
+
+
+<!-- partial -->
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    const profilePic = document.getElementById('profileImage');
+
+    const db = window.indexedDB.open('ProfilePictureDB', 1);
+
+    db.onerror = function(event) {
+      console.error('Error opening database:', event.target.error);
+    };
+
+    db.onsuccess = function(event) {
+      const database = event.target.result;
+      const transaction = database.transaction('ProfilePictureStore', 'readonly');
+      const store = transaction.objectStore('ProfilePictureStore');
+
+      const request = store.get('profilePicture');
+
+      request.onerror = function(event) {
+        console.error('Error retrieving image file:', event.target.error);
+      };
+
+      request.onsuccess = function(event) {
+        const file = request.result;
+        if (file) {
+          const fileURL = URL.createObjectURL(file);
+          profilePic.src = fileURL;
+        }
+      };
+
+      transaction.oncomplete = function() {
+        database.close();
+      };
+    };
+
+    db.onupgradeneeded = function(event) {
+      const database = event.target.result;
+      database.createObjectStore('ProfilePictureStore');
+    };
+  </script>
+
+<script>
+  document.getElementById("willHide").addEventListener("click", function(event){
+              event.target.style.display = "none";
+              window.print();
+           });
+</script>
+    
+  <script>
+    document.getElementById("name").innerHTML=localStorage.getItem("name");
+    document.getElementById("phone").innerHTML=localStorage.getItem("phone");
+    document.getElementById("gender").innerHTML=localStorage.getItem("gender");
+    // document.getElementById("dob").innerHTML=localStorage.getItem("dob");
+    document.getElementById("address").innerHTML=localStorage.getItem("address");
+    document.getElementById("twitter").innerHTML=localStorage.getItem("twitter");
+    document.getElementById("linkedin").innerHTML=localStorage.getItem("linkedin");
+    document.getElementById("github").innerHTML=localStorage.getItem("github");
+    document.getElementById("email").innerHTML=localStorage.getItem("email");
+    document.getElementById("role").innerHTML=localStorage.getItem("role");
+
+
+
+    var len=localStorage.getItem('Exp_len');
+    var con=document.getElementById("R-Experience");
+    for (i=1;i<=len;i++){
+      var li=document.createElement("li");
+      var span=document.createElement("span");
+      span.id="Exp_heading"+i;
+      li.appendChild(span);
+      var small=document.createElement("small");
+      small.id="Exp_detail"+i;
+      li.appendChild(small);
+      con.appendChild(li);
+      var name1=localStorage.getItem('Exp_heading'+i);
+      if (name1 != null){
+        document.getElementById("Exp_heading"+i).innerHTML=name1;
+        var name1=localStorage.getItem('Exp_detail'+i);
+        document.getElementById("Exp_detail"+i).innerHTML=name1;
+    }
+  }
+
+
+    // var con = document.getElementById("R-Edu_col");
+    for (i=1;i<=3;i++){
+      // var div1 =document.createElement("div");
+      // div1.id="Edu_college"+i;
+      // con.appendChild(div1);
+      // var div2 =document.createElement("div");
+      // div2.id="Edu_year"+i;
+      // con.appendChild(div2);
+      // var div3 =document.createElement("div");
+      // div3.id="Edu_percentage"+i;
+      // con.appendChild(div3);
+      var name1=localStorage.getItem('Edu_college'+i);
+      
+      if (name1 != null){
+        console.log(name1);
+            
+
+            var name2=localStorage.getItem('Edu_year'+i);
+            
+
+            var name3=localStorage.getItem('Edu_percentage'+i);
+            document.getElementById("Education"+i).innerHTML=name1 + "-" +name2+ "-" + name3;
+      }}
+
+
+      var len=localStorage.getItem('skill_len');
+      var con=document.getElementById("R-Skills");
+      for (i=1;i<=len;i++){
+        var li=document.createElement("li");
+        var span=document.createElement("span");
+        span.id="skill_heading"+i;
+        li.appendChild(span);
+        var div=document.createElement("progress");
+        div.setAttribute("value",localStorage.getItem('skill_per'+i));
+        div.setAttribute("max","100");
+        // var d=document.createElement("span");
+        // d.innerText=localStorage.getItem('&emsp;');
+        // d.innerText=localStorage.getItem('skill_per'+i);
+        li.appendChild(div);
+        // li.appendChild(document.createElement('br'));
+        // div.appendChild(d);
+        con.appendChild(li);
+        var name1=localStorage.getItem('skill_heading'+i);
+        if (name1 != null){
+      document.getElementById("skill_heading"+i).innerHTML=name1;
+
+      
+      // var name1=localStorage.getItem('skill_per'+i);
+      // document.getElementById("skill_per"+i).innerHTML=name1;
+      }
+    }  
+
+
+    var len=localStorage.getItem('Project_len');
+    var con=document.getElementById("R-Projects");
+    for (i=1;i<=len;i++){
+      var li=document.createElement("li");
+      var span=document.createElement("span");
+      span.id="Project_heading"+i;
+      li.appendChild(span);
+      var small=document.createElement("small");
+      small.id="Project_detail"+i;
+      li.appendChild(small);
+      con.appendChild(li);
+      var name1=localStorage.getItem('project_heading'+i);
+      if (name1 != null){
+          document.getElementById("Project_heading"+i).innerHTML=name1;
+          var name1=localStorage.getItem('project_detail'+i);
+          document.getElementById("Project_detail"+i).innerHTML=name1;
+    }
+  }
+
+
+
+    var len=localStorage.getItem('Ach_len');
+    var con=document.getElementById("R-Achievement");
+    for (i=1;i<=len;i++){
+      var li=document.createElement("li");
+      var span=document.createElement("span");
+      span.id="Ach_head"+i;
+      li.appendChild(span);
+      var small=document.createElement("small");
+      small.id="Ach_detail"+i;
+      li.appendChild(small);
+      con.appendChild(li);
+      var name1=localStorage.getItem('Ach_heading'+i);
+      if (name1 != null){
+    document.getElementById("Ach_head"+i).innerHTML=name1;
+    var name1=localStorage.getItem('Ach_detail'+i);
+    document.getElementById("Ach_detail"+i).innerHTML=name1;
+    }
+    
+  }
+
+
+    var len=localStorage.getItem('Interests_len');
+    var con=document.getElementById("R-Interests");
+    for (i=1;i<=len;i++){
+      var li=document.createElement("li");
+      var span=document.createElement("span");
+      span.id="Interests"+i;
+      li.appendChild(span);
+      con.appendChild(li);
+      var name1=localStorage.getItem('Interests'+i);
+      if (name1 != null){
+    document.getElementById("Interests"+i).innerHTML=name1;
+    }
+    
+  }
+
+
+
+    var len=localStorage.getItem('Activities_len');
+    var con=document.getElementById("R-Activities");
+    for (i=1;i<=len;i++){
+      var li=document.createElement("li");
+      var span=document.createElement("span");
+      span.id="Activities"+i;
+      li.appendChild(span);
+      con.appendChild(li);
+      var name1=localStorage.getItem('Activities'+i);
+      if (name1 != null){
+    document.getElementById("Activities"+i).innerHTML=name1;
+    }
+  }
+
+
+
+    var len=localStorage.getItem('Hobby_len');
+    var con=document.getElementById("R-Hobbies");
+    for (i=1;i<=len;i++){
+        var li=document.createElement("li");
+        var span=document.createElement("span");
+        span.id="Hobbies"+i;
+        li.appendChild(span);
+        con.appendChild(li);
+      var name1=localStorage.getItem('Hobbies'+i);
+      if (name1 != null){
+    document.getElementById("Hobbies"+i).innerHTML=name1;
+    }
+  }
+
+
+    var len=localStorage.getItem('Lang_len');
+    var con=document.getElementById("R-Languages");
+    for (i=1;i<=len;i++){
+        var li=document.createElement("li");
+        var span=document.createElement("span");
+        span.id="Language"+i;
+        li.appendChild(span);
+        con.appendChild(li);
+      var name1=localStorage.getItem('Language'+i);
+      if (name1 != null){
+    document.getElementById("Language"+i).innerHTML=name1;
+    }
+  }
+
+    
+    
+    
+
+  document.getElementById("Objectives").innerHTML=localStorage.getItem("Objective")
+
+
+
+   
+
+
+
+    
+
+  </script>
+
+</body>
+</html>

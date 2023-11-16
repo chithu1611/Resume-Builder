@@ -1,0 +1,113 @@
+{% extends 'Resumeapp/layouts/main.html' %}
+{% block content%}
+<h1 class="py-5 d-flex justify-content-center">Experience</h1>
+<div class="d-flex justify-content-between p-5">
+    <a href="{% url 'home'%}"><button class="btn btn-outline-primary ">Home</button></a>
+    <button type="button"class="btn btn-outline-primary " id="addbtn">Add</button>
+    <button type="button"class="btn btn-outline-primary " id="delbtn">Delete</button>
+</div>
+<form id="form">
+<div class="container" id="container" style="margin-top:10px">
+    <div class="col" id="divEl">
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"><input id="Exp_head1" required type="text"><label alt='Heading' placeholder='Heading'></label></div>
+        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"><textarea id="Exp_del1" required ></textarea><label alt='Details' placeholder='Details'></label></div>
+    </div>
+</div>
+<button type="submit" value="submit" class="btn btn-outline-primary mx-5" onclick="submitForm()"> Submit</button>
+</form>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+     function submitForm(event) {
+            swal({
+                title: "WELL DONE🙌!!",
+                text: "Your Response Is Taken👍",
+                buttons: ["Cancel", "Ok"],
+                }).then(function(result) {
+                    if (result) {
+                    window.location.href = "{% url 'home'%}";
+                    }
+                });
+            }
+ </script>
+<script>
+    var addBtn=document.getElementById("addbtn");
+    var delBtn=document.getElementById("delbtn");
+    var divEl=document.getElementById("divEl");
+    var containerId=document.getElementById("container");
+
+    var form=document.getElementById("form");
+
+    var i=1; 
+
+    addBtn.addEventListener("click",()=>{
+        console.log("hi");
+        var div=document.createElement("div");
+        div.className="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"
+
+        var input=document.createElement("input");
+        input.type = "text";
+        input.setAttribute("required","")
+
+       var value="Exp_head"+(i+1);
+       input.setAttribute("id",value) 
+
+       
+       var label=document.createElement("label");
+       label.setAttribute("alt","Heading")
+       label.setAttribute("placeholder","Heading")
+
+       div.appendChild(input);
+       div.appendChild(label);
+       divEl.appendChild(div);
+
+       var div1=document.createElement("div");
+        div1.className="p-2 col-sm-12 col-md-12 col-lg-6 col-xl-4"
+
+        var input1=document.createElement("textarea");
+       input1.setAttribute("required","")
+
+        var value="Exp_del"+(i+1);
+        input1.setAttribute("id",value); 
+
+        
+       var label1=document.createElement("label");
+       label1.setAttribute("alt","Details")
+       label1.setAttribute("placeholder","Details")
+
+
+       div1.appendChild(input1);
+       div1.appendChild(label1);
+       divEl.appendChild(div1);
+
+        i=i+1;
+    })
+
+
+    delBtn.addEventListener("click",()=>{
+        console.log("bye");
+        i=i-1;
+        divEl.removeChild(divEl.lastElementChild);
+        divEl.removeChild(divEl.lastElementChild);
+    })
+
+
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        for (j=1;j<=i;j++){
+        var heading=document.getElementById("Exp_head"+j);
+        console.log(i)
+        var headingValue=heading.value;
+        localStorage.setItem('Exp_heading'+j,headingValue);
+        
+        var heading=document.getElementById("Exp_del"+j);
+        console.log(i)
+        var headingValue=heading.value;
+        localStorage.setItem('Exp_detail'+j,headingValue);
+        console.log(i)
+        }
+        
+       localStorage.setItem('Exp_len',i);
+       console.log("main",i); 
+    })
+</script>
+{% endblock content%}

@@ -1,0 +1,157 @@
+{% extends 'Resumeapp/layouts/main.html' %}
+{% load static %}
+{% block content%}
+<style>
+        .img-size {
+           width: 100%;
+           height: 200px;
+           object-fit: fill;
+        }
+     </style>
+     <div class="container text-center" style="margin-top:25px;">
+        <p class="h1 text-dark"> Let's</p>
+        <p class="h5 text-dark"> Build Your</p>
+        <p class="h5 text-dark"> Own Resume</p>
+     </div>
+  <div class="d-flex justify-content-between p-5">
+    <div class="d-flex justify-content-start">
+      <div class="upload-button">
+        <label for="profilePicture">Upload Profile Picture</label>
+        <input type="file" id="profilePicture" accept="image/*">
+      </div>
+    </div>
+
+     <div class="d-flex justify-content-end ">
+     <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle ms-auto" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          Additional
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="{% url 'Eca'%}">Extra Curricular Activities </a></li>
+          <li><a class="dropdown-item" href="{% url 'Hobbies'%}">Hobbies</a></li>
+          <li><a class="dropdown-item" href="{% url 'Aoi'%}">Area of Intrests</a></li>
+          <li><a class="dropdown-item" href="{% url 'Language'%}">Language</a></li>
+          <li><a class="dropdown-item" href="{% url 'Achieve'%}">Achievements</a></li>
+        </ul>
+      </div>
+      <a href="{% url 'logout'%}"><button class="btn btn-danger ms-2">logout</button></a>
+    </div>
+  </div>
+
+
+
+<div class="container">
+    <div class="row">
+     <div class="col-md-4 col-lg-4" >
+        <div class="card my-100">
+            <a href="{% url 'education'%}" style="text-decoration:none;">
+            <img src="{% static 'images/education.jpg' %}" class="img-size" alt="Catagories" >
+            <div class="card-body">
+                <h5 class="card-title text-primary">Education</h5>
+            </div>
+           </a>
+        </div></div>
+        <div class="col-md-4 col-lg-4" >
+          <div class="card my-100">
+              <a href="{% url 'personal_details'%}" style="text-decoration:none;">
+              <img src="{% static 'images/personal_details.jpg' %}" class="img-size" alt="Catagories" >
+              <div class="card-body">
+                  <h5 class="card-title text-primary">Personal Details</h5>
+              </div>
+             </a>
+          </div></div>
+        <div class="col-md-4 col-lg-4" >
+        <div class="card my-100">
+            <a href="{% url 'Exp'%}" style="text-decoration:none;">
+            <img src="{% static 'images/experience.jpg' %}" class="img-size" alt="Catagories" >
+            <div class="card-body">
+                <h5 class="card-title text-primary">Experience</h5>
+            </div>
+        </a>
+        </div></div>
+        <div class="col-md-4 col-lg-4" style="margin-top:5px;">
+        <div class="card my-100">
+            <a href="{% url 'obj'%}" style="text-decoration:none;">
+            <img src="{% static 'images/objective.jpg' %}" class="img-size" alt="Catagories" >
+            <div class="card-body">
+                <h5 class="card-title text-primary">Objective</h5>
+            </div>
+        </a>
+        </div></div>
+        <div class="col-md-4 col-lg-4" style="margin-top:5px" >
+        <div class="card my-100 ">
+          <a href="{% url 'project'%}" style="text-decoration:none;">
+            <img src="{% static 'images/project.png' %}" class="img-size" alt="Catagories" >
+            <div class="card-body">
+                <h5 class="card-title text-primary">Project</h5>
+            </div>
+          </a>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-4" style="margin-top:5px;" >
+      <div class="card my-100 ">
+        <a href="{% url 'skills'%}" style="text-decoration:none;">
+          <img src="{% static 'images/skills.jpg' %}" class="img-size" alt="Catagories" >
+          <div class="card-body">
+              <h5 class="card-title text-primary">Skills</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-4" >
+      <div class="card my-100">
+          <a href="{% url 'Templates'%}" style="text-decoration:none;">
+          <img src="{% static 'images/Template.jpg' %}" class="img-size" alt="Catagories" >
+          <div class="card-body">
+              <h5 class="card-title text-primary">Templates</h5>
+          </div>
+          </a>
+        </div>
+      </div>
+  
+     </div>
+   </div>
+   <script>
+    const input = document.getElementById('profilePicture');
+
+    input.addEventListener('change', handleImageUpload);
+
+    function handleImageUpload(event) {
+      const file = event.target.files[0];
+
+      if (file && file.type.startsWith('image/')) {
+        const db = window.indexedDB.open('ProfilePictureDB', 1);
+
+        db.onerror = function(event) {
+          console.error('Error opening database:', event.target.error);
+        };
+
+        db.onsuccess = function(event) {
+          const database = event.target.result;
+          const transaction = database.transaction('ProfilePictureStore', 'readwrite');
+          const store = transaction.objectStore('ProfilePictureStore');
+
+          const request = store.put(file, 'profilePicture');
+
+          request.onerror = function(event) {
+            console.error('Error storing image file:', event.target.error);
+          };
+
+          request.onsuccess = function(event) {
+            console.log('Image file stored successfully!');
+          };
+
+          transaction.oncomplete = function() {
+            database.close();
+          };
+        };
+
+        db.onupgradeneeded = function(event) {
+          const database = event.target.result;
+          database.createObjectStore('ProfilePictureStore');
+        };
+      }
+    }
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+{% endblock content%}

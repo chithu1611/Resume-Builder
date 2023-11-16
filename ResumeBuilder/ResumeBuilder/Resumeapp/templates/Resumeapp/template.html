@@ -1,0 +1,75 @@
+{% extends 'Resumeapp/layouts/main.html' %}
+{% block content%}
+{% load static %}
+<style>
+    .img-size {
+       width: 100%;
+       height: 200px;
+       object-fit: fill;
+    }
+ </style>
+<h1 class="py-5 d-flex justify-content-center">Select Templates</h1>
+<div class="d-flex justify-content-between p-5">
+    <a href="{% url 'home'%}"><button class="btn btn-outline-primary ">Home</button></a>
+</div>
+<div class="container">
+    <div class="col">
+        <div class="col-sm-12 col-md-4 col-lg-4" >
+            <div class="card my-100">
+                <a href="{% url 'Resume1'%}" style="text-decoration:none;">
+                <img src="{% static 'images/Resume1.jpg' %}" class="img-size" alt="Catagories" >
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Template 1</h5>
+                </div>
+               </a>
+            </div>
+        </div>
+        <br><br>
+        <div class="col-md-4 col-lg-4" >
+            <div class="card my-100">
+                <a href="{% url 'Resume2'%}" style="text-decoration:none;">
+                <img src="{% static 'images/Resume2.jpg' %}" class="img-size" alt="Catagories" >
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Template 2</h5>
+                </div>
+                </a>
+            </div>
+        </div>
+        <br><br>
+        <div class="col-md-4 col-lg-4" >
+            <div class="card my-100">
+                <a href="{% url 'Resume3'%}" style="text-decoration:none;">
+                <img src="{% static 'images/Resume3.png' %}" class="img-size" alt="Catagories" >
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Template 3</h5>
+                </div>
+                </a>
+            </div>
+        </div>
+        <br><br>
+        <div class="col-md-4 col-lg-4" >
+            <div class="card my-100">
+                <a href="{% url 'Resume4'%}" style="text-decoration:none;">
+                <img src="{% static 'images/Resume5.png' %}" class="img-size" alt="Catagories" >
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Template 4</h5>
+                </div>
+                </a>
+            </div>
+        </div>
+        <br><br>
+        <div class="col-md-4 col-lg-4" >
+            <div class="card my-100">
+                <a href="{% url 'Resume5'%}" style="text-decoration:none;">
+                <img src="{% static 'images/Resume4.jpg' %}" class="img-size" alt="Catagories" >
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Template 5</h5>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+{% endblock content%}

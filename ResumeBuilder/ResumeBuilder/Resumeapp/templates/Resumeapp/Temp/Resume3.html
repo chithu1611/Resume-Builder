@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume 3</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+        * {margin: 0;padding: 0;}
+
+body{font-family: 'Montserrat', sans-serif;}
+
+#page {
+    min-height: 200px;
+    width: 60%;
+    min-width: 600px;
+    background: whitesmoke;
+    margin: 50px auto;
+    padding: 30px;
+    color: #27aae1;
+}
+
+/* .photo-and-name {
+    /* NO STYLE NEEDED YET
+}
+ */
+
+
+.contact-info-box {
+    width: 70.9%;
+    display: inline-block;
+}
+
+.name {
+    margin-bottom: -5px;
+}
+.job-title {
+    display: inline-block;
+}
+
+.contact-details {
+    background: #27aae1;
+    color: white;
+    margin-top: 25px;
+    padding: 5px;
+    font-size: 15px;
+    width:100%;
+    height:30px;
+    text-align:center
+
+}
+.contact-details1 {
+    background: #27aae1;
+    color: white;
+    text-align: center;
+    margin-top: -5px;
+    padding: 5px;
+    font-size: 15px;
+    width:100%;
+    height:30px;
+}
+span{
+    padding:5px
+}
+/* #objective {
+    
+} */
+
+#objective h3 {
+    border: 1px solid #d3d3d3;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 30px 0 10px;
+}
+
+#objective p {
+    padding: 0 5px;
+    line-height: 25px;
+    font-size: 14px;
+    color: #000;
+}
+
+#education h3 {
+    border: 1px solid #d3d3d3;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 30px 0 10px;
+}
+
+#education table td {
+    padding: 5px;
+    font-size: 14px;
+    color: #000;
+}
+
+
+
+#work h3 {
+    border: 1px solid #d3d3d3;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 30px 0 10px;
+}
+
+#work table td {
+    padding: 5px;
+    font-size: 14px;
+    color: #000;
+}
+
+#work table tr.work-1 td:first-child {
+    width: 120px;
+    color: gray;
+    padding-bottom: 25px;
+}
+
+#work table tr.work-1 td {
+    padding-bottom: 25px;
+}
+
+#work table tr.work-2 td:first-child {
+    width: 120px;
+    color: gray;
+}
+
+#bio-data h3 {
+    border: 1px solid #d3d3d3;
+    text-transform: uppercase;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 30px 0 10px;
+}
+
+#bio-data table td {
+    padding: 8px;
+    font-size: 15px;
+    color: #000;
+}
+
+#bio-data table tr td:first-child {
+    width: 200px;
+}
+
+#bio-data table tr td:nth-child(2) {
+    width: 300px;
+
+}
+li{
+    margin-left:25px;
+}
+
+.skills ul li {
+    display: flex;
+    margin-bottom: 10px;
+    color: blue;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .skills ul li .skill_name {
+    width: 25%;
+  }
+  
+  .skills ul li .skill_progress {
+    width: 60%;
+    margin: 0 5px;
+    position: relative;
+  }
+  
+  .skills ul li .skill_per {
+    width: 15%;
+  }
+  
+  .skills ul li .skill_progress span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #05faea;
+  }
+
+    </style>
+<style>
+  .profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 57px;
+  right: 410px;
+}
+
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #fd4f57;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;
+  justify-content: center;
+}
+
+.btn:hover {
+        box-shadow:1px 1px 9px 6px rgba(15, 15, 15, 0.945);
+        border-color: #00bafa;
+        border:2.5px solid #00bafa
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+}
+
+</style>
+</head>
+<body>
+   
+<div id="page">
+    <div class="d-flex justify-content-between p-5">
+        <div class="d-flex justify-content-start">
+            <h1 class="name" style="text-transform: uppercase;" id="name"><b>Muhammad Owais</b></h1>
+            <br>
+            <h3 class="job-title" id="role">IT Manager</h3><br>
+        </div>
+          <div class="profile-pic">
+            <img id="profileImage" alt="Profile Picture">
+          </div>
+        <br><br><br>
+        <p class="contact-details" >Email:<span id="email"></span></p>
+    </div>
+    <div  id="objective">
+        <h3>Objective</h3>
+        <p id="Objective">
+            To take a challenging and managerial role in the field of Computer programming and implement the expertise and experience gained in this field to develop complex project with efficiency and quality. 
+        </p>
+    </div>
+    <div id="education">
+        <h3 >Education</h3>
+        <table>
+            <tr class="school-1">
+                <td  id="Edu_year1"></td>
+                <td><b id="Edu_college1"></b>- <b id="Edu_percentage1"></b></td>
+            </tr>
+            <tr class="school-1">
+                <td  id="Edu_year2"></td>
+                <td><b id="Edu_college2"></b>- <b id="Edu_percentage2"></b></td>
+            </tr>
+            
+            <tr >
+                <td id="Edu_year3"></td>
+                <td><b id="Edu_college3"></b>-<b id="Edu_percentage3"></b></td>
+            </tr>
+        </table>
+    </div>
+    <div id="work">
+        <h3>Experience</h3>
+        <table id="T">
+        </table>
+    </div>
+    <div id="bio-data">
+        <h3>Bio-Data</h3>
+        <table>
+            <tr>
+                <td>Gender:</td>
+                <td><b id="gender"></b></td>
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                <td id="dob"></td>
+            </tr>
+            <tr>
+                <td>Linkedin:</td>
+                <td><b id="linkedin">42401-XXXXXXX-7</b></td>
+            </tr>
+            <tr>
+                <td>Github:</td>
+                <td><b id="github">Islam</b></td>
+            </tr>
+            <tr>
+                <td>Twitter:</td>
+                <td><b id="twitter">Pakistani</b></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><b id="Address">Unmarried</b></td>
+            </tr>
+        </table>
+    </div>
+    <div id="work">
+        <h3>Project</h3>
+        <table id="T1">
+        </table>
+    </div>
+    <div class="skills">
+    <div id="work">
+        <h3>Skills</h3>
+            <ul id="ul">
+            </ul>
+    </div>
+    </div>
+    <div id="work">
+        <h3>Achievements</h3>
+        <ul id="T3">
+        </ul>
+    </div>
+    <div id="work">
+        <h3>AreA of Interests </h3>
+        <ul id="T4">
+        </ul>
+    </div>
+    <div id="work">
+        <h3>Extra Caricular Activities</h3>
+        <ul id="T5">
+        </ul>
+    </div>
+    <div id="work">
+        <h3>Hobbies</h3>
+        <ul id="T6">
+        </ul>
+    </div>
+    <div id="work">
+        <h3>Language</h3>
+        <ul id="T7">
+        </ul>
+    </div>
+
+</div>
+<!-- Upload profile pic -->
+<div class="container">
+    <input type="button" class="btn" id="willHide" value="Download" />
+</div>
+<script>
+   document.getElementById("willHide").addEventListener("click", function(event){
+               event.target.style.display = "none";
+               window.print();
+            });
+</script>
+<script>
+  const profilePic = document.getElementById('profileImage');
+
+  const db = window.indexedDB.open('ProfilePictureDB', 1);
+
+  db.onerror = function(event) {
+    console.error('Error opening database:', event.target.error);
+  };
+
+  db.onsuccess = function(event) {
+    const database = event.target.result;
+    const transaction = database.transaction('ProfilePictureStore', 'readonly');
+    const store = transaction.objectStore('ProfilePictureStore');
+
+    const request = store.get('profilePicture');
+
+    request.onerror = function(event) {
+      console.error('Error retrieving image file:', event.target.error);
+    };
+
+    request.onsuccess = function(event) {
+      const file = request.result;
+      if (file) {
+        const fileURL = URL.createObjectURL(file);
+        profilePic.src = fileURL;
+      }
+    };
+
+    transaction.oncomplete = function() {
+      database.close();
+    };
+  };
+
+  db.onupgradeneeded = function(event) {
+    const database = event.target.result;
+    database.createObjectStore('ProfilePictureStore');
+  };
+</script>
+
+
+<script>
+    document.getElementById("name").innerHTML=localStorage.getItem("name");
+    document.getElementById("role").innerHTML=localStorage.getItem("role");
+    document.getElementById("email").innerHTML=localStorage.getItem("email");
+    document.getElementById("gender").innerHTML=localStorage.getItem("gender");
+    document.getElementById("Address").innerHTML=localStorage.getItem("address");
+    document.getElementById("dob").innerHTML=localStorage.getItem("dob");
+    document.getElementById("linkedin").innerHTML=localStorage.getItem("linkedin");
+    document.getElementById("github").innerHTML=localStorage.getItem("github");
+    document.getElementById("twitter").innerHTML=localStorage.getItem("twitter");
+    
+    
+    
+    for (i=1;i<=3;i++){
+        name1=localStorage.getItem("Edu_college"+i)
+        if (name1!=null){
+            document.getElementById("Edu_college"+i).innerHTML=localStorage.getItem("Edu_college"+i);
+            document.getElementById("Edu_year"+i).innerHTML=localStorage.getItem("Edu_year"+i);
+            document.getElementById("Edu_percentage"+i).innerHTML=localStorage.getItem("Edu_percentage"+i);
+    }}
+
+    var len=localStorage.getItem('Exp_len');
+    var w=document.getElementById("work");
+    var T=document.getElementById("T")
+    if (len==0){
+        document.getElementById("work").innerHTML=""
+    }
+    else{
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Exp_heading'+i);
+      if (name1 != null){
+        var tr=document.createElement("tr");
+        var td1=document.createElement("td");
+        var td2=document.createElement("td");
+        var b=document.createElement("b");
+        tr.classList.add("work-1");
+        b.setAttribute("id",'Exp_heading'+i);
+        td1.appendChild(b);
+        td2.setAttribute("id",'Exp_detail'+i);
+        T.appendChild(tr);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        document.getElementById('Exp_heading'+i).innerHTML=localStorage.getItem('Exp_heading'+i)
+        document.getElementById('Exp_detail'+i).innerHTML=localStorage.getItem('Exp_detail'+i)
+    }}}
+
+    var len=localStorage.getItem("Project_len")
+    var w=document.getElementById("work");
+    var T=document.getElementById("T1")
+    if (len==0){
+        document.getElementById("work1").innerHTML=""
+    }
+    else{
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('project_heading'+i);
+      if (name1 != null){
+        var tr=document.createElement("tr");
+        var td1=document.createElement("td");
+        var td2=document.createElement("td");
+        var b=document.createElement("b")
+        tr.classList.add("work-1");
+        b.setAttribute("id",'project_heading'+i);
+        td1.appendChild(b)
+        td2.setAttribute("id",'project_detail'+i);
+        T.appendChild(tr);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        document.getElementById('project_heading'+i).innerHTML=localStorage.getItem('project_heading'+i)
+        document.getElementById('project_detail'+i).innerHTML=localStorage.getItem('project_detail'+i)
+    }}}
+
+    var len=localStorage.getItem('Ach_len');
+    var ul7=document.getElementById("T3");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Ach_heading'+i);
+      var name2=localStorage.getItem('Ach_detail'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Ach_heading'+i);
+        ul7.appendChild(l1)
+        document.getElementById("Ach_heading"+i).innerHTML=name1+"-"+name2;
+    }}
+
+    
+    
+    var len=localStorage.getItem('skill_len');
+    var ul=document.getElementById("ul")
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('skill_heading'+i);
+      if (name1 != null){
+        var li=document.createElement("li");
+        var div1=document.createElement("div");
+        var div2=document.createElement("div");
+        var div3=document.createElement("div");
+        var span=document.createElement("span");
+        div1.classList.add("skill_name");
+        div2.classList.add("skill_progress");
+        div3.classList.add("skill_per");
+        div1.setAttribute("id","skill_heading"+i);
+        li.appendChild(div1);
+        ul.appendChild(li)
+        document.getElementById("skill_heading"+i).innerHTML=name1;
+        var name1=localStorage.getItem('skill_per'+i);
+        span.setAttribute("style","width:"+name1+"%")
+        div2.appendChild(span);
+        li.appendChild(div2);
+        ul.appendChild(li)
+        li.appendChild(div3);
+        ul.appendChild(li)
+        div3.setAttribute("id",'skill_per'+i);
+        document.getElementById("skill_per"+i).innerHTML=name1;
+    }}
+
+    var len=localStorage.getItem('Interests_len');
+    var ul6=document.getElementById("T4");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Interests'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Interests'+i);
+        ul6.appendChild(l1)
+        document.getElementById("Interests"+i).innerHTML=name1;
+    }}
+
+    var len=localStorage.getItem('Activities_len');
+    var ul6=document.getElementById("T5");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Activities'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Activities'+i);
+        ul6.appendChild(l1)
+        document.getElementById("Activities"+i).innerHTML=name1;
+    }}
+
+    var len=localStorage.getItem('Hobby_len');
+    var ul6=document.getElementById("T6");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Hobbies'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Hobbies'+i);
+        ul6.appendChild(l1)
+        document.getElementById("Hobbies"+i).innerHTML=name1;
+    }}
+
+    var len=localStorage.getItem('Lang_len');
+    var ul6=document.getElementById("T7");
+    for (i=1;i<=len;i++){
+      var name1=localStorage.getItem('Language'+i);
+      if (name1 != null){
+        var l1=document.createElement("li");
+        l1.setAttribute("id",'Language'+i);
+        ul6.appendChild(l1)
+        document.getElementById("Language"+i).innerHTML=name1;
+    }}
+    document.getElementById("Objective").innerHTML=localStorage.getItem("Objective")
+
+    // {% comment %} {% comment  %}
+
+    //  var len=localStorage.getItem('Ach_len');
+    // var ul7=document.getElementById("ul7");
+    // for (i=1;i<=len;i++){
+    //   var name1=localStorage.getItem('Ach_heading'+i);
+    //   var name2=localStorage.getItem('Ach_detail'+i);
+    //   if (name1 != null){
+    //     var l1=document.createElement("li");
+    //     l1.setAttribute("id",'Ach_heading'+i);
+    //     ul7.appendChild(l1)
+    //     document.getElementById("Ach_heading"+i).innerHTML=name1+"-"+name2;
+    // }}
+
+    // var len=localStorage.getItem('Interests_len');
+    // var ul6=document.getElementById("ul6");
+    // for (i=1;i<=len;i++){
+    //   var name1=localStorage.getItem('Interests'+i);
+    //   if (name1 != null){
+    //     var l1=document.createElement("li");
+    //     l1.setAttribute("id",'Interests'+i);
+    //     ul6.appendChild(l1)
+    //     document.getElementById("Interests"+i).innerHTML=name1;
+    // }}
+
+    // var len=localStorage.getItem('Activities_len');
+    // var ul8=document.getElementById("ul8");
+    // for (i=1;i<=len;i++){
+    //   var name1=localStorage.getItem('Interests'+i);
+    //   if (name1 != null){
+    //     var l1=document.createElement("li");
+    //     l1.setAttribute("id",'Interests'+i);
+    //     ul8.appendChild(l1)
+    //     document.getElementById("Interests"+i).innerHTML=name1;
+    // }}
+
+    // var len=localStorage.getItem('Hobby_len');
+    // var ul3=document.getElementById("ul3");
+    // for (i=1;i<=len;i++){
+    //   var name1=localStorage.getItem('Hobbies'+i);
+    //   if (name1 != null){
+    //     var l1=document.createElement("li");
+    //     l1.setAttribute("id",'Hobbies'+i);
+    //     ul3.appendChild(l1)
+    //     document.getElementById("Hobbies"+i).innerHTML=name1;
+    // }}
+
+    // var len=localStorage.getItem('Lang_len');
+    // var ul5=document.getElementById("ul5");
+    // for (i=1;i<=len;i++){
+    //   var name1=localStorage.getItem('Language'+i);
+    //   if (name1 != null){
+    //     var l1=document.createElement("li");
+    //     l1.setAttribute("id",'Language'+i);
+    //     ul5.appendChild(l1)
+    //     document.getElementById("Language"+i).innerHTML=name1;
+    // }}
+    
+  
+
+    // name1=localStorage.getItem('Objective');
+    // if (name1 != null){
+
+    // document.getElementById("Objective").innerHTML=localStorage.getItem("Objective")
+    // }
+
+    // var len=localStorage.getItem('Project_len');
+    // var ul4=document.getElementById("ul4");
+    // if (len==0){
+    //     document.getElementById("project").innerHTML=""
+    // }
+    // else{
+    // for (i=1;i<=len;i++){
+    //   var name1=localStorage.getItem('project_heading'+i);
+    //   if (name1 != null){
+    //     var li=document.createElement("li");
+    //     var div=document.createElement("div");
+    //     var p1=document.createElement("p");
+    //     var p2=document.createElement("p");
+    //     div.classList.add("info");
+    //     p1.classList.add("semi-bold");
+    //     p1.setAttribute("id","project_heading"+i)
+    //     div.appendChild(p1);
+    //     p2.setAttribute("id","project_detail"+i)
+    //     div.appendChild(p2);
+    //     li.appendChild(div);
+    //     ul4.appendChild(li);
+    //     ul4.appendChild(document.createElement("br"));
+    //     document.getElementById("project_heading"+i).innerHTML=name1;
+    //    var name1=localStorage.getItem('project_detail'+i);
+    //    document.getElementById("project_detail"+i).innerHTML=name1;
+    // }}}
+
+    // var len=localStorage.getItem('skill_len');
+    // var ul=document.getElementById("ul")
+    // for (i=1;i<=len;i++){
+    //   var name1=localStorage.getItem('skill_heading'+i);
+    //   if (name1 != null){
+    //     var li=document.createElement("li");
+    //     var div1=document.createElement("div");
+    //     var div2=document.createElement("div");
+    //     var div3=document.createElement("div");
+    //     var span=document.createElement("span");
+    //     div1.classList.add("skill_name");
+    //     div2.classList.add("skill_progress");
+    //     div3.classList.add("skill_per");
+    //     div1.setAttribute("id","skill_heading"+i);
+    //     li.appendChild(div1);
+    //     ul.appendChild(li)
+    //     document.getElementById("skill_heading"+i).innerHTML=name1;
+    //     var name1=localStorage.getItem('skill_per'+i);
+    //     span.setAttribute("style","width:"+name1+"%")
+    //     div2.appendChild(span);
+    //     li.appendChild(div2);
+    //     ul.appendChild(li)
+    //     li.appendChild(div3);
+    //     ul.appendChild(li)
+    //     div3.setAttribute("id",'skill_per'+i);
+    //     document.getElementById("skill_per"+i).innerHTML=name1;
+    // }} {% endcomment %}
+</script> 
+</body>
+</html>

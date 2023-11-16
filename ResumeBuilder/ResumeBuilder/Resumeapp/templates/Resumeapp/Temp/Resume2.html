@@ -1,0 +1,424 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Resume 2 </title>
+  <meta name="viewport" content="width=device-width"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="{% static 'css/Res2.css'%}">
+<style>
+  .profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #fd4f57;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;
+  justify-content: center;
+}
+
+.btn:hover {
+        box-shadow:1px 1px 9px 6px rgba(15, 15, 15, 0.945);
+        border-color: #00bafa;
+        border:2.5px solid #00bafa
+}
+
+.butt{
+    /* align-self: flex-end;
+    margin: 10px; */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<div class="resume-wrapper">
+	<section class="profile section-padding">
+		<div class="container">
+			<div class="picture-resume-wrapper">
+          <div class="profile-pic">
+            <img id="profileImage" alt="Profile Picture">
+          </div>
+      <h1><b id="name"></b></h1>
+      <div id="role" style="font-size: 20px; margin-right: 20px; margin-top: 10px;"></div>
+ </div>
+      <div class="name-wrapper">
+      </div>
+      <div class="clearfix"></div>
+      <div class="contact-info clearfix">
+      	<ul class="list-titles">
+          <li>Gender:</li>
+          <li>DOB:</li>
+          <li>Address:</li>
+          <br><br>
+        
+      		<!-- <li id="Edu_percentage1"></li>
+      		<li id="Edu_year1"></li>
+      		<li id="Edu_college2"></li> -->
+      	</ul>
+        <ul class="list-content ">
+        	<li id="gender"></li> <!-- YOUR EMAIL -->
+        	<li id="dob"></li> <!-- YOUR WEBSITE  -->
+        	<li id="address"></li>
+       </ul>
+      </div>
+      <div class="contact-presentation" >Objectives 
+      	<p id="Objectives"></p></div>
+      <div class="contact-social clearfix">
+      	<ul class="list-titles">
+          <li>Email</li>
+      		<li>Twitter</li>
+      		<li>Linkedin</li>
+      		<li>Github</li>
+          <li>Contact:</li>
+      	</ul>
+        <ul class="list-content"> <!-- REMEMBER TO PUT THE URL ON THE HREF TAG  -->
+          <li id="email"></li>
+      		<li><a href="" id="twitter"></a></li> <!-- YOUR TWITTER USER  -->
+      		<li><a href="" id="linkedin"></a></li> <!-- YOUR DRIBBBLE USER  -->
+      		<li><a href="" id="github"></a></li> <!-- YOUR BEHANCE USER  -->
+          <li id="phone"></li>
+      	</ul>
+      </div>
+		</div>
+	</section>
+  
+  <section class="experience section-padding">
+  	<div class="container">
+  		
+      <div class="section-wrapper clearfix">
+        <h3 class="section-title">Experience</h3>  <!-- YOUR SET OF SKILLS  -->
+          <div id="R-Experience">
+          </div>
+         </div>
+        
+        <div class="company-wrapper clearfix">
+          <h3 class="experience-title">Education Details</h3>  <!-- YOUR SET OF SKILLS  -->
+          <div>
+            <dl><dt>10 th</dt>
+            <dd><li id="Education1"></li>
+              
+            </dd>
+            </ul></dl>
+            <dl><dt>12 th</dt>
+              <dd><li id="Education2"></li>
+                
+              </dd>
+              </ul></dl>
+              <dl><dt>COLLEGE </dt>
+                <dd><li id="Education3"></li>
+                  
+                </dd>
+                </ul></dl>
+            </div>
+        </div>
+        
+        <div class="section-wrapper clearfix">
+          <h3 class="section-title">Languages</h3>  <!-- YOUR SET OF SKILLS  -->
+            <div id="R-Languages">
+            </div>
+        </div>
+        
+        <div class="section-wrapper clearfix">
+          <h3 class="section-title">Interests</h3>  <!-- YOUR SET OF SKILLS  -->
+            <div id="R-Interests">
+            </div>
+        </div>
+
+        <div class="section-wrapper clearfix">
+          <h3 class="section-title">Achievements</h3>  <!-- YOUR SET OF SKILLS  -->
+            <div id="R-Achievement">
+            </div>
+        </div>
+        
+        <div class="section-wrapper clearfix">
+          <h3 class="section-title">Activities</h3>  <!-- YOUR SET OF SKILLS  -->
+            <div id="R-Activities">
+            </div>
+        </div>
+        
+      </div><!--Skill experience-->
+      
+      <div class="section-wrapper clearfix">
+      	<h3 class="section-title">Skills</h3>  <!-- YOUR SET OF SKILLS  -->
+        	<ul id="R-Skills">
+        	</ul>
+      </div>
+      
+      <div class="section-wrapper clearfix">
+        <h3 class="section-title">Hobbies</h3>
+        <div id="R-Hobbies"></div>  <!-- DESCRIPTION OF YOUR HOBBIES -->
+        </div>
+
+        <div class="section-wrapper clearfix">
+          <h3 class="section-title">Projects</h3>
+          <div id="R-Projects"></div>  <!-- DESCRIPTION OF YOUR HOBBIES -->
+          </div>
+  	</div>
+
+
+    
+    
+  </div>
+  </section>
+</div>
+<div class="butt">
+  <input type="button" class="btn" id="willHide" value="Download" />
+</div>
+<script>
+  document.getElementById("willHide").addEventListener("click", function(event){
+              event.target.style.display = "none";
+              window.print();
+           });
+</script>
+<script>
+  const profilePic = document.getElementById('profileImage');
+
+  const db = window.indexedDB.open('ProfilePictureDB', 1);
+
+  db.onerror = function(event) {
+    console.error('Error opening database:', event.target.error);
+  };
+
+  db.onsuccess = function(event) {
+    const database = event.target.result;
+    const transaction = database.transaction('ProfilePictureStore', 'readonly');
+    const store = transaction.objectStore('ProfilePictureStore');
+
+    const request = store.get('profilePicture');
+
+    request.onerror = function(event) {
+      console.error('Error retrieving image file:', event.target.error);
+    };
+
+    request.onsuccess = function(event) {
+      const file = request.result;
+      if (file) {
+        const fileURL = URL.createObjectURL(file);
+        profilePic.src = fileURL;
+      }
+    };
+
+    transaction.oncomplete = function() {
+      database.close();
+    };
+  };
+
+  db.onupgradeneeded = function(event) {
+    const database = event.target.result;
+    database.createObjectStore('ProfilePictureStore');
+  };
+</script>
+<script>
+  
+  document.getElementById("name").innerHTML=localStorage.getItem("name");
+  document.getElementById("phone").innerHTML=localStorage.getItem("phone");
+  document.getElementById("gender").innerHTML=localStorage.getItem("gender");
+  document.getElementById("dob").innerHTML=localStorage.getItem("dob");
+  document.getElementById("address").innerHTML=localStorage.getItem("address");
+  document.getElementById("twitter").innerHTML=localStorage.getItem("twitter");
+  document.getElementById("linkedin").innerHTML=localStorage.getItem("linkedin");
+  document.getElementById("github").innerHTML=localStorage.getItem("github");
+  document.getElementById("email").innerHTML=localStorage.getItem("email");
+  document.getElementById("role").innerHTML=localStorage.getItem("role");
+  // var con = document.getElementById("R-Edu_col");
+  for (i=1;i<=3;i++){
+    // var div1 =document.createElement("div");
+    // div1.id="Edu_college"+i;
+    // con.appendChild(div1);
+    // var div2 =document.createElement("div");
+    // div2.id="Edu_year"+i;
+    // con.appendChild(div2);
+    // var div3 =document.createElement("div");
+    // div3.id="Edu_percentage"+i;
+    // con.appendChild(div3);
+    var name1=localStorage.getItem('Edu_college'+i);
+    
+    if (name1 != null){
+      console.log(name1);
+          
+
+          var name2=localStorage.getItem('Edu_year'+i);
+          
+
+          var name3=localStorage.getItem('Edu_percentage'+i);
+          document.getElementById("Education"+i).innerHTML=name1 + "-" +name2+ "-" + name3;
+    }}
+
+
+
+  var len=localStorage.getItem('Ach_len');
+  var con=document.getElementById("R-Achievement");
+  for (i=1;i<=len;i++){
+    var div=document.createElement("div");
+    div.id="Ach_head"+i;
+    con.appendChild(div);
+    var div=document.createElement("div");
+    div.id="Ach_detail"+i;
+    con.appendChild(div);
+    var name1=localStorage.getItem('Ach_heading'+i);
+    if (name1 != null){
+  document.getElementById("Ach_head"+i).innerHTML=name1;
+  var name1=localStorage.getItem('Ach_detail'+i);
+  document.getElementById("Ach_detail"+i).innerHTML=name1;
+  }
+  
+}
+
+
+  var len=localStorage.getItem('Interests_len');
+  var con=document.getElementById("R-Interests");
+  for (i=1;i<=len;i++){
+    var div=document.createElement("div");
+    div.id="Interests"+i;
+    con.appendChild(div);
+    var name1=localStorage.getItem('Interests'+i);
+    if (name1 != null){
+  document.getElementById("Interests"+i).innerHTML=name1;
+  }
+  
+}
+
+
+
+  var len=localStorage.getItem('Activities_len');
+  var con=document.getElementById("R-Activities");
+  for (i=1;i<=len;i++){
+    var div=document.createElement("div");
+    div.id="Activities"+i;
+    con.appendChild(div);
+    var name1=localStorage.getItem('Activities'+i);
+    if (name1 != null){
+  document.getElementById("Activities"+i).innerHTML=name1;
+  }
+}
+
+
+
+  var len=localStorage.getItem('Hobby_len');
+  var con=document.getElementById("R-Hobbies");
+  for (i=1;i<=len;i++){
+    var div=document.createElement("div");
+    div.id="Hobbies"+i;
+    con.appendChild(div);
+    var name1=localStorage.getItem('Hobbies'+i);
+    if (name1 != null){
+  document.getElementById("Hobbies"+i).innerHTML=name1;
+  }
+}
+
+
+  var len=localStorage.getItem('Lang_len');
+  var con=document.getElementById("R-Languages");
+  for (i=1;i<=len;i++){
+    var div=document.createElement("div");
+    div.id="Language"+i;
+    con.appendChild(div);
+    var name1=localStorage.getItem('Language'+i);
+    if (name1 != null){
+  document.getElementById("Language"+i).innerHTML=name1;
+  }
+}
+
+  
+  var len=localStorage.getItem('Exp_len');
+  var con=document.getElementById("R-Experience");
+  for (i=1;i<=len;i++){
+    var div=document.createElement("div");
+    div.id="Exp_heading"+i;
+    con.appendChild(div);
+    var div=document.createElement("div");
+    div.id="Exp_detail"+i;
+    con.appendChild(div);
+    var name1=localStorage.getItem('Exp_heading'+i);
+    if (name1 != null){
+      document.getElementById("Exp_heading"+i).innerHTML=name1;
+      var name1=localStorage.getItem('Exp_detail'+i);
+      document.getElementById("Exp_detail"+i).innerHTML=name1;
+  }
+}
+  
+
+document.getElementById("Objectives").innerHTML=localStorage.getItem("Objective")
+
+
+
+  var len=localStorage.getItem('Project_len');
+  var con=document.getElementById("R-Projects");
+  for (i=1;i<=len;i++){
+    var div=document.createElement("div");
+    div.id="Project_heading"+i;
+    con.appendChild(div);
+    var div=document.createElement("div");
+    div.id="Project_detail"+i;
+    con.appendChild(div);
+    var name1=localStorage.getItem('project_heading'+i);
+    if (name1 != null){
+        document.getElementById("Project_heading"+i).innerHTML=name1;
+        var name1=localStorage.getItem('project_detail'+i);
+        document.getElementById("Project_detail"+i).innerHTML=name1;
+  }
+}
+
+
+
+  var len=localStorage.getItem('skill_len');
+  var con=document.getElementById("R-Skills");
+  for (i=1;i<=len;i++){
+    var div=document.createElement("div");
+    var li=document.createElement("li");
+    li.id="skill_heading"+i;
+    div.appendChild(li);
+    var li=document.createElement("progress");
+    li.setAttribute("value",localStorage.getItem('skill_per'+i));
+    li.setAttribute("max","100");
+    var d=document.createElement("span");
+    // d.innerText=localStorage.getItem('&emsp;');
+    d.innerText=localStorage.getItem('skill_per'+i);
+    div.appendChild(li);
+    // li.appendChild(document.createElement('br'));
+    div.appendChild(d);
+    con.appendChild(div);
+    var name1=localStorage.getItem('skill_heading'+i);
+    if (name1 != null){
+  document.getElementById("skill_heading"+i).innerHTML=name1;
+
+  
+  // var name1=localStorage.getItem('skill_per'+i);
+  // document.getElementById("skill_per"+i).innerHTML=name1;
+  }
+}
+
+
+</script>
+<!-- <script  src="{% static 'js/Res2.js'}"></script> -->
+<script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+  
+
+
+</body>
+</html>
